@@ -5,4 +5,5 @@ pymongo
 certifi
 pymongo[srv]
 load_dotenv
+scikit-learn
 #-e .

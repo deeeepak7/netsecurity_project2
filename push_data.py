@@ -15,7 +15,6 @@ ca = certifi.where()
 
 import pymongo
 import pandas as pd
-import numpy as np
 
 class networkdataextract():
     def __init__(self):
@@ -39,7 +38,7 @@ class networkdataextract():
             self.record = record
             self.database = database
             self.collection = collection
-            self.mongo_client = pymongo.MongoClient(mongo_url)
+            self.mongo_client = pymongo.MongoClient(mongo_url, ca)
             db = self.mongo_client[self.database]
             coll = db[self.collection]
             coll.insert_many(self.record)
